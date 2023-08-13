@@ -155,14 +155,15 @@ end
 
 def print_board(board, guesses_left, offset = 4)
   # code_map = [' ', 'a', 'b', 'c', 'd', 'e', 'f']
-  code_map = ['  ', '🐈', '🦄', '🐼', '🦆', '🐬', '🦀']
+  code_map = ['  ', '🐈 ', '🦄 ', '🐼 ', '🦆 ', '🐬 ', '🦀 ']
 
   # Print codemap
   print "Code map is: #{(1..6).each.map { |i| "#{i}: #{code_map[i]}  " }.join}\n"
 
   off = "\t" * offset
-  puts "#{off}   M ^ S T E R M I N D"
-  puts "#{off} ...-----=======-----..."
+  puts
+  puts "#{off}    M ^ S T E R M I N D"
+  puts "#{off}  ...-----=======-----..."
   puts
   board.each_with_index do |entry, index|
     guess = entry[:guess]
@@ -175,6 +176,7 @@ def print_board(board, guesses_left, offset = 4)
     puts "#{off} #{(index + 1 + board.size).to_s.rjust(2)} | #{Array.new(4, code_map[0]).join(' ')} |      |"
     sleep(0.05)
   end
+  puts
 end
 
 def play_game(code_maker, code_guesser, max_guesses = 12)
@@ -220,16 +222,16 @@ if choice == 1
   write 'Ok, starting a game "Human vs Computer"...'
   sleep(1)
   choice = ask('Do you want to create code or to guess it?',
-               'Create code', 'Guess code')
+               'Guess code', 'Create code')
   if choice == 1
+    play_game(ComputerPlayer.new, HumanPlayer.new)
+  elsif choice == 2
     result = play_game(HumanPlayer.new, ComputerPlayer.new)
     if result == 'decoded'
       write 'Computer decoded your code successfully! Try to make more advanced code next time!'
     elsif result == 'failed'
       write 'Computer did not decoded your code!'
     end
-  elsif choice == 2
-    play_game(ComputerPlayer.new, HumanPlayer.new)
   end
 elsif choice == 2
   write 'Ok, starting a game "Human vs Human"...'
