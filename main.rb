@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 IGNORE_SLEEP = false
+BOARD_OFFSET = 1
 
 def sleep(seconds); end if IGNORE_SLEEP
 
@@ -153,7 +154,7 @@ def ask(question, *choices)
   input
 end
 
-def print_board(board, guesses_left, offset = 4)
+def print_board(board, guesses_left, offset = BOARD_OFFSET)
   # code_map = [' ', 'a', 'b', 'c', 'd', 'e', 'f']
   code_map = ['  ', '🐈 ', '🦄 ', '🐼 ', '🦆 ', '🐬 ', '🦀 ']
 
