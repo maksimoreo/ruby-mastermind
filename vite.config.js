@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
+  base: 'https://maksimoreo.github.io/ruby-mastermind/',
   server: {
     headers: {
       // COOP & COEP are required for `SharedArrayBuffer` and `Atomics` but are not required to run WASM

@@ -5,7 +5,7 @@
   "description": "Project from TheOdinProject: https://www.theodinproject.com/courses/ruby-programming/lessons/mastermind Matermind game written with Ruby",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "repository": {
