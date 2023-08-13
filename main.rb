@@ -2,9 +2,7 @@
 
 # Mastermind game logic
 class DecodingBoard
-  attr_reader :state
-  attr_reader :guesses
-  attr_reader :max_guesses
+  attr_reader :state, :guesses, :max_guesses
 
   def self.random_code
     Array.new(4) { rand(1..6) }
@@ -124,8 +122,8 @@ class HumanPlayer < Player
 
   def decode(board, guesses_left)
     write "This is Your #{board.size + 1} try. You have #{guesses_left} guesses left."
-    code = HumanPlayer.ask_for_code
-    code
+
+    HumanPlayer.ask_for_code
   end
 end
 
