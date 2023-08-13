@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+IGNORE_SLEEP = false
+
+def sleep(seconds); end if IGNORE_SLEEP
+
 # Mastermind game logic
 class DecodingBoard
   attr_reader :state, :guesses, :max_guesses

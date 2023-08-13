@@ -25,10 +25,13 @@
       window.onload = async () => {
         const runno = document.querySelector('runno-run')
 
+        // const response = await fetch('/main.rb')
         const response = await fetch('https://raw.githubusercontent.com/maksimoreo/ruby-mastermind/main/main.rb')
         const code = await response.text()
 
-        runno.code = code
+        const alteredCode = code.replace('IGNORE_SLEEP = false', 'IGNORE_SLEEP = true')
+
+        runno.code = alteredCode
         runno.run()
       }
     </script>
