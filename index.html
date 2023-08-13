@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RUBY MASTERMIND</title>
+  </head>
+  <body>
+    <style>
+      body {
+        margin: 0;
+        background-color: black;
+      }
+
+      runno-run {
+        height: calc(100vh - 10px);
+      }
+    </style>
+
+    <runno-run runtime="ruby"> puts "hi" </runno-run>
+
+    <script type="module">
+      import '@runno/runtime'
+
+      window.onload = async () => {
+        const runno = document.querySelector('runno-run')
+
+        const response = await fetch('https://raw.githubusercontent.com/maksimoreo/ruby-mastermind/main/main.rb')
+        const code = await response.text()
+
+        runno.code = code
+        runno.run()
+      }
+    </script>
+  </body>
+</html>

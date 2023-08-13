@@ -1,0 +1,28 @@
+{
+  "name": "ruby-mastermind",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Project from TheOdinProject: https://www.theodinproject.com/courses/ruby-programming/lessons/mastermind Matermind game written with Ruby",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maksimoreo/ruby-mastermind.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maksimoreo/ruby-mastermind/issues"
+  },
+  "homepage": "https://github.com/maksimoreo/ruby-mastermind#readme",
+  "devDependencies": {
+    "vite": "^4.4.9"
+  },
+  "dependencies": {
+    "@runno/runtime": "^0.5.1"
+  }
+}
